@@ -1,0 +1,18 @@
+class Traversal
+{
+    static ArrayList<Integer> dfs(ArrayList<ArrayList<Integer>> g, int N)
+    {
+        ArrayList<Integer> sol=new ArrayList<>();
+        boolean visited[]=new boolean[N];
+dfsutil(g,sol,0,visited);
+return sol;
+    }
+public static void dfsutil(ArrayList<ArrayList<Integer>> res,ArrayList<Integer> list,int ver,boolean arr[]){
+            arr[ver]=true;
+            list.add(ver);
+            for(int i:res.get(ver)){
+                if(!arr[i])
+dfsutil(res,list,i,arr);
+}
+}
+}
